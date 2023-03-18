@@ -6,6 +6,107 @@
 
 body{
     font-family: 'Raleway', 'sans-serif';
+    transition: 500ms ease all;
+}
+
+.dark{
+    background: #333333;
+    transition: 500ms ease all;
+}
+
+.wrap{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 60px;
+    padding: 20px;
+}
+
+.wrap .logo{
+    font-size: 40px;
+    font-weight: bold;
+    margin-right:  auto;
+    border-bottom: 1px solid #ccc;
+}
+
+#menuhamburguesa{
+    font-size: 30px;
+    color: #000;
+    display: none;
+}
+
+.wrap .menu ul{
+    list-style: none;
+}
+
+.wrap .menu ul li{
+    display: inline-block;
+    padding: 0 20px;
+    border-right: 1px solid #ccc;
+    transition: all 300ms;
+}
+
+.wrap .menu ul li a{
+    display: block;
+    text-decoration: none;
+    color: #000;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.wrap .menu ul li:hover{
+    transform:translateY(-6px)
+}
+
+body.dark .logo,
+body.dark .menu ul li a{
+    color: #fff;
+}
+
+.theme{
+    background: #343D5B;
+    border-radius: 1000px;
+    border: none;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    outline: none;
+    margin-left: 10px;
+}
+
+.theme::after{
+    content: "";
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    background: #F1F1F1;
+    top: 0;
+    left: unset;
+    right: 0;
+    border-radius: 100px;
+    transition: .3s ease all;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
+
+}
+
+.active{
+    background: rgb(193, 193, 35);
+    color: #000;
+}
+
+.active::after{
+    left: 0;
+    right: unset;
+}
+
+.theme span{
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    display: block;
+    background: none;
+    color: #fff;
 }
 
 .grid{
@@ -33,8 +134,9 @@ body{
     color: darkred;
 }
 
-.parrafo{
-    margin-bottom: 20px;
+body.dark .wigth-600,
+body.dark p{
+    color: #fff;
 }
 
 #header{
@@ -102,6 +204,14 @@ body{
     color: #fff;
 }
 
+body.dark .item p{
+    color: #000;
+}
+
+body.dark .item:hover p{
+    color: #fff;
+}
+
 [class^="fa-brands fa"]{
     font-size: 50px;
     text-align: center;
@@ -149,6 +259,12 @@ body{
 
 .texto-mission{
     margin-bottom: 20px;
+}
+
+body.dark .texto-mission h3{
+    color: #fff;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
 }
 
 .img-mission{
@@ -206,6 +322,19 @@ body{
     #header{
         height: auto;
         padding-top: 30px ;
+    }
+
+    #menuhamburguesa{
+        display: block;
+    }
+
+    .menu ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #343D5B;
+        top: 0;
+        left: 0;
     }
 
     .grid{
