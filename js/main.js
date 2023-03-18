@@ -16,3 +16,11 @@ button.addEventListener('click', () =>
     document.body.classList.toggle('dark');
     button.classList.toggle('active');
 });
+
+const hamburgesa = document.querySelector(".hamburgesa");
+const menuUl = document.querySelector(".menuUl"); 
+
+hamburgesa.addEventListener('click', () => 
+{
+    menuUl.classList.toggle("visible");
+});
